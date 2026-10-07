@@ -1,0 +1,12 @@
+.vs/
+bin/
+obj/
+*.user
+*.suo
+WORKHORSE_PLAN.md
+REVIEW_RESULTS.md
+TEST_RESULTS.md
+TestRunner.cs
+RunTests.ps1
+VerifyImportReview.ps1
+Review_*
