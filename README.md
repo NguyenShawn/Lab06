@@ -17,6 +17,8 @@ Môn COMP1019: Lập trình trên Windows.
 - Khi đưa lên Git hoặc gửi sang máy khác, phải kèm `FrmProduct.cs`, `FrmProduct.Designer.cs`, `FrmProduct.resx` và `ProductManager.csproj`. `.resx` chứa thông tin thiết kế của form và đã được khai báo là EmbeddedResource trong dự án.
 - Khôi phục NuGet trước khi build; dự án dùng PackageReference, không cần thêm DLL từ thư mục NuGet của người khác. Trong Developer PowerShell for Visual Studio có thể chạy `msbuild ProductManager.sln /restore /p:Configuration=Release`.
 
+- Liên kết dữ liệu của bảng được thiết lập trong `FormLoaded` (`FrmProduct.cs`). Giữ các cột trong Designer ở trạng thái không liên kết; không đặt `productSource.DataSource = typeof(ProductManager.Product)` trong Designer, vì trình thiết kế có thể chưa nạp được kiểu này khi mở bản nguồn chưa build.
+
 ## Bố cục giao diện
 Menu ở trên cùng (File, Quản lý, Trợ giúp); thông tin sản phẩm và ảnh ở phía trên; thanh nút Thêm, Sửa, Xóa, Làm mới, Tìm kiếm nằm ngay dưới khối nhập liệu. Khu tìm kiếm/sắp xếp ở trên bảng. Bảng có dòng xen kẽ, tiêu đề rõ ràng và màu chọn nhẹ. Dưới cùng là StatusStrip hiển thị trạng thái, số lượng và tổng tồn kho.
 

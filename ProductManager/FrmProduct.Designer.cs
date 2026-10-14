@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpProduct = new System.Windows.Forms.GroupBox();
             this.picProduct = new System.Windows.Forms.PictureBox();
             this.lblHint = new System.Windows.Forms.Label();
@@ -59,10 +59,19 @@
             this.lblTimKiem = new System.Windows.Forms.Label();
             this.lblSapXep = new System.Windows.Forms.Label();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
+            this.colMaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLoaiSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConKinhDoanh = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colDuongDanAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextProducts = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ctxEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.ctxDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.ctxDetails = new System.Windows.Forms.ToolStripMenuItem();
+            this.productSource = new System.Windows.Forms.BindingSource(this.components);
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuMain = new System.Windows.Forms.MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,26 +96,17 @@
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.tsbReset = new System.Windows.Forms.ToolStripButton();
             this.tsbSearch = new System.Windows.Forms.ToolStripButton();
-            this.colMaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLoaiSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConKinhDoanh = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colDuongDanAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productSource = new System.Windows.Forms.BindingSource(this.components);
             this.grpProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDonGia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.contextProducts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.menuMain.SuspendLayout();
             this.statusMain.SuspendLayout();
             this.tsActions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grpProduct
@@ -365,22 +365,21 @@
             this.dgvProducts.AllowUserToAddRows = false;
             this.dgvProducts.AllowUserToDeleteRows = false;
             this.dgvProducts.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(253)))));
-            this.dgvProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(253)))));
+            this.dgvProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProducts.AutoGenerateColumns = false;
             this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProducts.BackgroundColor = System.Drawing.Color.White;
             this.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProducts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvProducts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
+            this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProducts.ColumnHeadersHeight = 40;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -393,16 +392,15 @@
             this.colConKinhDoanh,
             this.colDuongDanAnh});
             this.dgvProducts.ContextMenuStrip = this.contextProducts;
-            this.dgvProducts.DataSource = this.productSource;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(48)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(48)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvProducts.EnableHeadersVisualStyles = false;
             this.dgvProducts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(234)))), ((int)(((byte)(242)))));
             this.dgvProducts.Location = new System.Drawing.Point(19, 425);
@@ -417,6 +415,75 @@
             this.dgvProducts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridCellDoubleClick);
             this.dgvProducts.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridCellMouseDown);
             this.dgvProducts.SelectionChanged += new System.EventHandler(this.GridSelectionChanged);
+            // 
+            // colMaSP
+            // 
+            this.colMaSP.FillWeight = 70F;
+            this.colMaSP.HeaderText = "Mã SP";
+            this.colMaSP.Name = "colMaSP";
+            this.colMaSP.ReadOnly = true;
+            this.colMaSP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colTenSP
+            // 
+            this.colTenSP.FillWeight = 220F;
+            this.colTenSP.HeaderText = "Tên sản phẩm";
+            this.colTenSP.Name = "colTenSP";
+            this.colTenSP.ReadOnly = true;
+            this.colTenSP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colLoaiSP
+            // 
+            this.colLoaiSP.FillWeight = 90F;
+            this.colLoaiSP.HeaderText = "Loại";
+            this.colLoaiSP.Name = "colLoaiSP";
+            this.colLoaiSP.ReadOnly = true;
+            this.colLoaiSP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colDonGia
+            // 
+            dataGridViewCellStyle3.Format = "N2";
+            this.colDonGia.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colDonGia.FillWeight = 110F;
+            this.colDonGia.HeaderText = "Đơn giá (VNĐ)";
+            this.colDonGia.Name = "colDonGia";
+            this.colDonGia.ReadOnly = true;
+            this.colDonGia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colSoLuong
+            // 
+            dataGridViewCellStyle4.Format = "N0";
+            this.colSoLuong.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colSoLuong.FillWeight = 65F;
+            this.colSoLuong.HeaderText = "Số lượng";
+            this.colSoLuong.Name = "colSoLuong";
+            this.colSoLuong.ReadOnly = true;
+            this.colSoLuong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colNgayNhap
+            // 
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
+            this.colNgayNhap.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colNgayNhap.FillWeight = 90F;
+            this.colNgayNhap.HeaderText = "Ngày nhập";
+            this.colNgayNhap.Name = "colNgayNhap";
+            this.colNgayNhap.ReadOnly = true;
+            this.colNgayNhap.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colConKinhDoanh
+            // 
+            this.colConKinhDoanh.FillWeight = 60F;
+            this.colConKinhDoanh.HeaderText = "Còn KD";
+            this.colConKinhDoanh.Name = "colConKinhDoanh";
+            this.colConKinhDoanh.ReadOnly = true;
+            // 
+            // colDuongDanAnh
+            // 
+            this.colDuongDanAnh.FillWeight = 130F;
+            this.colDuongDanAnh.HeaderText = "Đường dẫn ảnh";
+            this.colDuongDanAnh.Name = "colDuongDanAnh";
+            this.colDuongDanAnh.ReadOnly = true;
+            this.colDuongDanAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // contextProducts
             // 
@@ -701,87 +768,6 @@
             this.tsbSearch.ToolTipText = "Tìm kiếm — Nhập mã / tên trong ô bên dưới";
             this.tsbSearch.Click += new System.EventHandler(this.SearchProducts);
             // 
-            // colMaSP
-            // 
-            this.colMaSP.DataPropertyName = "MaSP";
-            this.colMaSP.FillWeight = 70F;
-            this.colMaSP.HeaderText = "Mã SP";
-            this.colMaSP.Name = "colMaSP";
-            this.colMaSP.ReadOnly = true;
-            this.colMaSP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colTenSP
-            // 
-            this.colTenSP.DataPropertyName = "TenSP";
-            this.colTenSP.FillWeight = 220F;
-            this.colTenSP.HeaderText = "Tên sản phẩm";
-            this.colTenSP.Name = "colTenSP";
-            this.colTenSP.ReadOnly = true;
-            this.colTenSP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colLoaiSP
-            // 
-            this.colLoaiSP.DataPropertyName = "LoaiSP";
-            this.colLoaiSP.FillWeight = 90F;
-            this.colLoaiSP.HeaderText = "Loại";
-            this.colLoaiSP.Name = "colLoaiSP";
-            this.colLoaiSP.ReadOnly = true;
-            this.colLoaiSP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colDonGia
-            // 
-            this.colDonGia.DataPropertyName = "DonGia";
-            dataGridViewCellStyle9.Format = "N2";
-            this.colDonGia.DefaultCellStyle = dataGridViewCellStyle9;
-            this.colDonGia.FillWeight = 110F;
-            this.colDonGia.HeaderText = "Đơn giá (VNĐ)";
-            this.colDonGia.Name = "colDonGia";
-            this.colDonGia.ReadOnly = true;
-            this.colDonGia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colSoLuong
-            // 
-            this.colSoLuong.DataPropertyName = "SoLuong";
-            dataGridViewCellStyle10.Format = "N0";
-            this.colSoLuong.DefaultCellStyle = dataGridViewCellStyle10;
-            this.colSoLuong.FillWeight = 65F;
-            this.colSoLuong.HeaderText = "Số lượng";
-            this.colSoLuong.Name = "colSoLuong";
-            this.colSoLuong.ReadOnly = true;
-            this.colSoLuong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colNgayNhap
-            // 
-            this.colNgayNhap.DataPropertyName = "NgayNhap";
-            dataGridViewCellStyle11.Format = "dd/MM/yyyy";
-            this.colNgayNhap.DefaultCellStyle = dataGridViewCellStyle11;
-            this.colNgayNhap.FillWeight = 90F;
-            this.colNgayNhap.HeaderText = "Ngày nhập";
-            this.colNgayNhap.Name = "colNgayNhap";
-            this.colNgayNhap.ReadOnly = true;
-            this.colNgayNhap.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colConKinhDoanh
-            // 
-            this.colConKinhDoanh.DataPropertyName = "ConKinhDoanh";
-            this.colConKinhDoanh.FillWeight = 60F;
-            this.colConKinhDoanh.HeaderText = "Còn KD";
-            this.colConKinhDoanh.Name = "colConKinhDoanh";
-            this.colConKinhDoanh.ReadOnly = true;
-            // 
-            // colDuongDanAnh
-            // 
-            this.colDuongDanAnh.DataPropertyName = "DuongDanAnh";
-            this.colDuongDanAnh.FillWeight = 130F;
-            this.colDuongDanAnh.HeaderText = "Đường dẫn ảnh";
-            this.colDuongDanAnh.Name = "colDuongDanAnh";
-            this.colDuongDanAnh.ReadOnly = true;
-            this.colDuongDanAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // productSource
-            // 
-            this.productSource.DataSource = typeof(ProductManager.Product);
-            // 
             // FrmProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -815,6 +801,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numDonGia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.contextProducts.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.productSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.menuMain.ResumeLayout(false);
             this.menuMain.PerformLayout();
@@ -822,7 +809,6 @@
             this.statusMain.PerformLayout();
             this.tsActions.ResumeLayout(false);
             this.tsActions.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

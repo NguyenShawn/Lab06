@@ -45,6 +45,18 @@ namespace ProductManager
 
         private void FormLoaded(object sender, EventArgs e)
         {
+            // Bind at runtime so Designer can open before the project is built.
+            // Keep the eight unbound columns owned by the visual designer.
+            dgvProducts.AutoGenerateColumns = false;
+            colMaSP.DataPropertyName = nameof(Product.MaSP);
+            colTenSP.DataPropertyName = nameof(Product.TenSP);
+            colLoaiSP.DataPropertyName = nameof(Product.LoaiSP);
+            colDonGia.DataPropertyName = nameof(Product.DonGia);
+            colSoLuong.DataPropertyName = nameof(Product.SoLuong);
+            colNgayNhap.DataPropertyName = nameof(Product.NgayNhap);
+            colConKinhDoanh.DataPropertyName = nameof(Product.ConKinhDoanh);
+            colDuongDanAnh.DataPropertyName = nameof(Product.DuongDanAnh);
+            dgvProducts.DataSource = productSource;
             cboLoaiSP.Items.AddRange(new object[] { "Điện tử", "Văn phòng", "Gia dụng", "Thời trang" });
             products.Add(new Product { MaSP = "SP001", TenSP = "Chuột không dây", LoaiSP = "Điện tử", DonGia = 250000, SoLuong = 20, NgayNhap = DateTime.Today.AddDays(-3), ConKinhDoanh = true, DuongDanAnh = "" });
             products.Add(new Product { MaSP = "SP002", TenSP = "Sổ tay", LoaiSP = "Văn phòng", DonGia = 35000, SoLuong = 50, NgayNhap = DateTime.Today.AddDays(-2), ConKinhDoanh = true, DuongDanAnh = "" });
