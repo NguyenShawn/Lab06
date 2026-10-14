@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -36,7 +36,12 @@ namespace ProductManager
             return MessageBox.Show(this, text, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
         }
 
-        public FrmProduct() { InitializeComponent(); }
+        public FrmProduct()
+        {
+            InitializeComponent();
+            // Custom painting runs at runtime; the layout remains owned by Designer.
+            tsActions.Renderer = new ActionStripRenderer();
+        }
 
         private void FormLoaded(object sender, EventArgs e)
         {
@@ -415,6 +420,60 @@ namespace ProductManager
         {
             ShowInfo("• Thêm: nhập thông tin rồi nhấn Thêm (Ctrl+N).\n• Sửa: chọn dòng, thay đổi thông tin, nhấn Sửa (Ctrl+S).\n• Xóa: chọn dòng, nhấn Xóa (Ctrl+Delete) và xác nhận.\n• Tìm kiếm: nhập mã/tên rồi Enter. Ctrl+F chuyển tới ô tìm.\n• Làm mới (F5): xóa ô nhập và hiện toàn bộ dữ liệu.\n• Nhấp phải: Sửa, Xóa, Xem chi tiết. Nhấp đúp để xem chi tiết.\n• File → Nhập sản phẩm từ Excel (.xlsx) (Ctrl+O): nạp hàng loạt sản phẩm từ file Excel.\n• File → Xuất danh sách TXT (Ctrl+E): xuất các dòng đang hiển thị.\n• Dữ liệu chỉ lưu trong bộ nhớ, đóng ứng dụng sẽ mất thay đổi.", "Hướng dẫn — Lab 06", MessageBoxIcon.Information);
             UpdateStatus("Đã mở hướng dẫn.");
+        }
+
+        private void SearchKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter) return;
+            SearchProducts(sender, e);
+            e.SuppressKeyPress = true;
+        }
+
+        private void SortChanged(object sender, EventArgs e)
+        {
+            RefreshGrid();
+            UpdateStatus("Đã sắp xếp danh sách.");
+        }
+
+        private void GridCellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) ShowDetails(sender, e);
+        }
+
+        private void ContextProductsOpening(object sender, CancelEventArgs e)
+        {
+            e.Cancel = SelectedProduct() == null;
+        }
+
+        private void ExitApplication(object sender, EventArgs e) { Close(); }
+
+        private void DisposePreviewImage(object sender, EventArgs e)
+        {
+            if (picProduct.Image != null)
+            {
+                picProduct.Image.Dispose();
+                picProduct.Image = null;
+            }
+        }
+
+        // Vẽ nền nút rõ ràng, có phản hồi khi rê chuột hoặc nhấn.
+        private sealed class ActionStripRenderer : ToolStripProfessionalRenderer
+        {
+            protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
+            {
+                Color color = e.Item.BackColor;
+                var button = e.Item as ToolStripButton;
+                if (button != null && button.Pressed) color = ControlPaint.Dark(color, 0.12F);
+                else if (e.Item.Selected) color = ControlPaint.Dark(color, 0.04F);
+                using (var brush = new SolidBrush(color))
+                    e.Graphics.FillRectangle(brush, new Rectangle(Point.Empty, e.Item.Size));
+                if (e.Item.Selected)
+                {
+                    using (var pen = new Pen(ControlPaint.Dark(color, 0.15F)))
+                        e.Graphics.DrawRectangle(pen, 0, 0, e.Item.Width - 1, e.Item.Height - 1);
+                }
+            }
+            protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e) { }
         }
     }
 }

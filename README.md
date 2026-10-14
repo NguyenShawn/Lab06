@@ -11,6 +11,12 @@ Môn COMP1019: Lập trình trên Windows.
    ```
 5. Nhấn **F5** hoặc **Ctrl+F5** để chạy chương trình.
 
+## Chỉnh giao diện bằng Designer
+- Trong Solution Explorer, nhấp phải `FrmProduct.cs` → **View Designer** (hoặc Shift+F7). Toolbox và cửa sổ Properties dùng để thêm, di chuyển và cấu hình control; tab sự kiện (biểu tượng tia sét) chọn các handler trong `FrmProduct.cs`.
+- Giữ `InitializeComponent` trong `FrmProduct.Designer.cs` do Visual Studio quản lý. Xử lý nghiệp vụ và renderer tùy chỉnh nằm trong `FrmProduct.cs`.
+- Khi đưa lên Git hoặc gửi sang máy khác, phải kèm `FrmProduct.cs`, `FrmProduct.Designer.cs`, `FrmProduct.resx` và `ProductManager.csproj`. `.resx` chứa thông tin thiết kế của form và đã được khai báo là EmbeddedResource trong dự án.
+- Khôi phục NuGet trước khi build; dự án dùng PackageReference, không cần thêm DLL từ thư mục NuGet của người khác. Trong Developer PowerShell for Visual Studio có thể chạy `msbuild ProductManager.sln /restore /p:Configuration=Release`.
+
 ## Bố cục giao diện
 Menu ở trên cùng (File, Quản lý, Trợ giúp); thông tin sản phẩm và ảnh ở phía trên; thanh nút Thêm, Sửa, Xóa, Làm mới, Tìm kiếm nằm ngay dưới khối nhập liệu. Khu tìm kiếm/sắp xếp ở trên bảng. Bảng có dòng xen kẽ, tiêu đề rõ ràng và màu chọn nhẹ. Dưới cùng là StatusStrip hiển thị trạng thái, số lượng và tổng tồn kho.
 
